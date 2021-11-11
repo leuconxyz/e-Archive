@@ -1,20 +1,21 @@
 <div *ngFor="let doc of eList">
+  <nb-card>
+    <nb-card-header>
+      Document Title: {{doc._source.name}}
+    </nb-card-header>
 
-  <div class="row">
-    <!-- <p *ngIf="eSha != ''">Document ID: {{eSha}}</p> -->
-    <p>Document ID: <span>{{doc._source.sha}}</span></p>
-    <p> <br>Document Title: {{doc._source.metadata.title}}</p>
-  </div>
+    <nb-card-body>
+      <div class="row">
+        <p #xx data-read="false" *ngFor="let text of doc.highlight.text" [innerHTML]="text">
 
-  <div class="row">
-    <p #xx data-read="false" *ngFor="let text of doc.highlight.text" [innerHTML]="text">
+          <!-- {{(xx.dataset.read=='true') ? doc._source.text : doc._source.text | slice:0:150}} <span *ngIf="xx.dataset.read=='false'">...</span>
+          <a href="javascript:;" *ngIf="xx.dataset.read=='false'" (click)="xx.dataset.read ='true'">[Read More]</a>
+          <a href="javascript:;" *ngIf="xx.dataset.read=='true'" (click)="xx.dataset.read ='false'">[Read Less]</a> -->
 
-      <!-- {{(xx.dataset.read=='true') ? doc._source.text : doc._source.text | slice:0:150}} <span *ngIf="xx.dataset.read=='false'">...</span>
-      <a href="javascript:;" *ngIf="xx.dataset.read=='false'" (click)="xx.dataset.read ='true'">[Read More]</a>
-      <a href="javascript:;" *ngIf="xx.dataset.read=='true'" (click)="xx.dataset.read ='false'">[Read Less]</a> -->
-
-      <!-- <p>Document Text:</p>
-    <p>{{doc.text}}</p> -->
-    </p>
-  </div>
+          <!-- <p>Document Text:</p>
+        <p>{{doc.text}}</p> -->
+        </p>
+      </div>
+    </nb-card-body>
+  </nb-card>
 </div>
