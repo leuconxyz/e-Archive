@@ -35,14 +35,12 @@ export class DashboardComponent implements OnDestroy {
 
     this.searchService.onSearchSubmit()
     .subscribe((data: any) => {
-      this.dataService.sendGetSearchRequest(data.term).subscribe((data: any)=>{
-        console.log(data);
-        //this.eText = data.text;
-        //this.eSha = data.sha;
-        this.eList = data;
+      this.dataService.sendGetSearchRequest(data.term).subscribe((result: any) => {
+        // this.eText = data.text;
+        // this.eSha = data.sha;
+        this.eList = result;
       });
     });
-    
   }
 
   ngOnDestroy() {
