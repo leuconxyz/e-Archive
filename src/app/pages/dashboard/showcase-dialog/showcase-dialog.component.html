@@ -1,0 +1,9 @@
+<nb-card>
+    <nb-card-header>{{doc._source.name}}</nb-card-header>
+    <nb-card-body>
+      {{doc._source.text}}
+    </nb-card-body>
+    <nb-card-footer>
+      <button nbButton hero status="primary" (click)="dismiss()">Exit</button>
+    </nb-card-footer>
+  </nb-card>

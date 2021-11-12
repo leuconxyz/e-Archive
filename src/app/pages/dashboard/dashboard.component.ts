@@ -1,8 +1,8 @@
 import {Component, OnDestroy} from '@angular/core';
-import { NbSearchService, NbThemeService } from '@nebular/theme';
+import { NbSearchService, NbThemeService, NbDialogService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators' ;
-import { SolarData } from '../../@core/data/solar';
 import { DataService } from '../../services/data.service';
+import { ShowcaseDialogComponent } from './showcase-dialog/showcase-dialog.component';
 
 interface CardSettings {
   title: string;
@@ -27,7 +27,8 @@ export class DashboardComponent implements OnDestroy {
 
   constructor(private themeService: NbThemeService,
               private searchService: NbSearchService,
-              private dataService: DataService) {
+              private dataService: DataService,
+              private dialogService: NbDialogService) {
     this.themeService.getJsTheme()
       .pipe(takeWhile(() => this.alive))
       .subscribe(theme => {
@@ -40,6 +41,15 @@ export class DashboardComponent implements OnDestroy {
         // this.eSha = data.sha;
         this.eList = result;
       });
+    });
+  }
+
+  open(doc) {
+    this.dialogService.open(ShowcaseDialogComponent, {
+      context: {
+        title: 'This is a title passed to the dialog component',
+        doc: doc,
+      },
     });
   }
 

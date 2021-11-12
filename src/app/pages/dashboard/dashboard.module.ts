@@ -9,12 +9,14 @@ import {
   NbSelectModule,
   NbListModule,
   NbIconModule,
+  NbDialogModule,
 } from '@nebular/theme';
 import { NgxEchartsModule } from 'ngx-echarts';
 
 import { ThemeModule } from '../../@theme/theme.module';
 import { DashboardComponent } from './dashboard.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { ShowcaseDialogComponent } from './showcase-dialog/showcase-dialog.component';
 
 import { FormsModule } from '@angular/forms';
 
@@ -37,6 +39,10 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     DashboardComponent,
     ContactsComponent,
+    ShowcaseDialogComponent,
+  ],
+  entryComponents: [
+    ShowcaseDialogComponent,
   ],
 })
 export class DashboardModule { }
