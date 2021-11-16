@@ -12,7 +12,7 @@ export class ShowcaseDialogComponent {
   @Input() doc;
 
   constructor(protected ref: NbDialogRef<ShowcaseDialogComponent>) {
-    console.log(this.doc);
+    // console.log(this.doc);
   }
 
   dismiss() {
