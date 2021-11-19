@@ -7,6 +7,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/pages/iot-dashboard',
   },
   {
+    title: 'Arquivador',
+    icon: 'attach-2-outline',
+    link: '/pages/upload',
+  },
+  {
     title: 'FEATURES',
     group: true,
   },

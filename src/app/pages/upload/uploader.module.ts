@@ -10,15 +10,16 @@ import {
   NbListModule,
   NbIconModule,
   NbDialogModule,
+  NbCheckboxModule,
 } from '@nebular/theme';
 import { NgxEchartsModule } from 'ngx-echarts';
 
 import { ThemeModule } from '../../@theme/theme.module';
-import { DashboardComponent } from './dashboard.component';
-import { ContactsComponent } from './contacts/contacts.component';
-import { ShowcaseDialogComponent } from './showcase-dialog/showcase-dialog.component';
+import { UploaderComponent } from './uploader.component';
+import { ShowcaseDialogComponent } from '../dashboard/showcase-dialog/showcase-dialog.component';
 
 import { FormsModule } from '@angular/forms';
+import { FormInputsComponent } from './form-inputs/form-inputs.component';
 
 @NgModule({
   imports: [
@@ -35,10 +36,11 @@ import { FormsModule } from '@angular/forms';
     NbIconModule,
     NbButtonModule,
     NgxEchartsModule,
+    NbCheckboxModule,
   ],
   declarations: [
-    DashboardComponent,
-    ContactsComponent,
+    UploaderComponent,
+    FormInputsComponent
   ],
 })
-export class DashboardModule { }
+export class UploaderModule { }
