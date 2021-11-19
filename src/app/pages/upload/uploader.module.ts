@@ -40,7 +40,7 @@ import { FormInputsComponent } from './form-inputs/form-inputs.component';
   ],
   declarations: [
     UploaderComponent,
-    FormInputsComponent
+    FormInputsComponent,
   ],
 })
 export class UploaderModule { }
