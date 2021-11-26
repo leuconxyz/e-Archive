@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NbCardModule, NbMenuModule, NbRadioModule } from '@nebular/theme';
+import { NbActionsModule, NbButtonModule, NbCardModule, NbCheckboxModule, NbDatepickerModule, NbIconModule, NbInputModule, NbMenuModule, NbRadioModule, NbSelectModule, NbUserModule } from '@nebular/theme';
 
 import { ThemeModule } from '../@theme/theme.module';
 import { PagesComponent } from './pages.component';
@@ -20,9 +20,20 @@ import { FormInputsComponent } from './upload/form-inputs/form-inputs.component'
     MiscellaneousModule,
     NbCardModule,
     NbRadioModule,
+    ThemeModule,
+    NbInputModule,
+    NbCardModule,
+    NbButtonModule,
+    NbActionsModule,
+    NbUserModule,
+    NbCheckboxModule,
+    NbDatepickerModule,
+    NbSelectModule,
+    NbIconModule,
   ],
   declarations: [
     PagesComponent,
+    FormInputsComponent,
     ShowcaseDialogComponent,
   ],
   entryComponents: [

@@ -15,7 +15,6 @@ import {
 import { NgxEchartsModule } from 'ngx-echarts';
 
 import { ThemeModule } from '../../@theme/theme.module';
-import { UploaderComponent } from './uploader.component';
 import { ShowcaseDialogComponent } from '../dashboard/showcase-dialog/showcase-dialog.component';
 
 import { FormsModule } from '@angular/forms';
@@ -39,8 +38,6 @@ import { FormInputsComponent } from './form-inputs/form-inputs.component';
     NbCheckboxModule,
   ],
   declarations: [
-    UploaderComponent,
-    FormInputsComponent,
   ],
 })
 export class UploaderModule { }

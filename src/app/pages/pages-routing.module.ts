@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
-import { UploaderComponent } from './upload/uploader.component';
+import { FormInputsComponent } from './upload/form-inputs/form-inputs.component';
 
 const routes: Routes = [{
   path: '',
@@ -16,7 +16,7 @@ const routes: Routes = [{
     },
     {
       path: 'upload',
-      component: UploaderComponent,
+      component: FormInputsComponent,
     },
     {
       path: 'miscellaneous',
