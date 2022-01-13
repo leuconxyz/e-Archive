@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { NbWindowService } from '@nebular/theme';
+import { WindowFormComponent } from '../window/window-form/window-form.component';
 
 @Component({
   selector: 'ngx-form-inputs',
@@ -7,7 +10,30 @@ import { Component } from '@angular/core';
 })
 export class FormInputsComponent {
 
-  starRate = 2;
-  heartRate = 4;
-  radioGroupValue = 'This is value 2';
+  fileName = '';
+
+  constructor(private http: HttpClient, private windowService: NbWindowService) { }
+
+  onFileSelected(event) {
+
+    const file: File = event.target.files[0];
+
+    if (file) {
+
+      this.fileName = file.name;
+
+      const formData = new FormData();
+
+      formData.append("thumbnail", file);
+
+      const upload$ = this.http.post("/api/thumbnail-upload", formData);
+
+      upload$.subscribe();
+    }
+  }
+
+  openWindowForm() {
+    this.windowService.open(WindowFormComponent, { title: `Window` });
+  }
 }
+

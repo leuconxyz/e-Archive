@@ -24,3 +24,33 @@ nb-card-body {
   .demo-items {
     flex: 1 0 33%;
   }
+
+  .file-input {
+    display: none;
+  }
+
+  button {
+    border: 0;
+    color: #ABB4C6;
+    background-color: transparent;
+  }
+
+  .cUpload {
+    display: flex;
+    justify-content: center;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  nb-icon {
+    height: 150px;
+    width: 150px;
+  }
+
+  nb-icon:hover {
+    color: #9aa1b1;
+  }
+
+  nb-card-footer {
+    align-self: center;
+  }
