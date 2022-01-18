@@ -9,6 +9,7 @@ import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import { UploaderModule } from './upload/uploader.module';
 import { ShowcaseDialogComponent } from './dashboard/showcase-dialog/showcase-dialog.component';
 import { FormInputsComponent } from './upload/form-inputs/form-inputs.component';
+import { WindowFormComponent } from './upload/window/window-form/window-form.component';
 
 @NgModule({
   imports: [
@@ -35,6 +36,7 @@ import { FormInputsComponent } from './upload/form-inputs/form-inputs.component'
     PagesComponent,
     FormInputsComponent,
     ShowcaseDialogComponent,
+    WindowFormComponent,
   ],
   entryComponents: [
     ShowcaseDialogComponent,

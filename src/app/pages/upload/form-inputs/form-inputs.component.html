@@ -2,7 +2,7 @@
   <nb-card>
     <nb-card-header>E-Document Upload</nb-card-header>
     <nb-card-body>
-      <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
+      <input type="file" class="file-input" #fileUpload>
 
       <div class="file-upload">
         <div class="cUpload">
@@ -11,12 +11,12 @@
           </button>
         </div>
         <div class="cUpload">
-          {{fileName || "Please select a file to upload. "}}
+          {{fileUpload.files[0] == null ? "Please select a file to upload." : fileUpload.files[0].name}}
         </div>
       </div>
     </nb-card-body>
     <nb-card-footer>
-      <button (click)="openWindowForm()" nbButton status="primary" hero>
+      <button (click)="onUpload(fileUpload)" nbButton status="primary" hero>
         UPLOAD
       </button>
     </nb-card-footer>

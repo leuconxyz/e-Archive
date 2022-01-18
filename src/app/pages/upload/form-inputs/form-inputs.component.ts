@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { NbWindowService } from '@nebular/theme';
+import { take } from 'rxjs/operators';
 import { WindowFormComponent } from '../window/window-form/window-form.component';
 
 @Component({
@@ -12,11 +13,16 @@ export class FormInputsComponent {
 
   fileName = '';
 
+  public eSha = '';
+  public eTitle = '';
+  public eText = '';
+  public eAuthor ='';
+
   constructor(private http: HttpClient, private windowService: NbWindowService) { }
 
-  onFileSelected(event) {
+  onUpload(event) {
 
-    const file: File = event.target.files[0];
+    const file: File = event.files[0];
 
     if (file) {
 
@@ -24,11 +30,11 @@ export class FormInputsComponent {
 
       const formData = new FormData();
 
-      formData.append("thumbnail", file);
+      formData.append("file", file);
 
-      const upload$ = this.http.post("/api/thumbnail-upload", formData);
+      const upload$ = this.http.post("http://localhost:8080/parse/text", formData);
 
-      upload$.subscribe();
+      upload$.pipe(take(1)).subscribe();
     }
   }
 
