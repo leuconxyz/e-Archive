@@ -10,6 +10,8 @@ import { UploaderModule } from './upload/uploader.module';
 import { ShowcaseDialogComponent } from './dashboard/showcase-dialog/showcase-dialog.component';
 import { FormInputsComponent } from './upload/form-inputs/form-inputs.component';
 import { WindowFormComponent } from './upload/window/window-form/window-form.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -31,6 +33,8 @@ import { WindowFormComponent } from './upload/window/window-form/window-form.com
     NbDatepickerModule,
     NbSelectModule,
     NbIconModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     PagesComponent,

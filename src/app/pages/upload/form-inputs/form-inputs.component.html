@@ -1,8 +1,9 @@
 <div>
   <nb-card>
     <nb-card-header>E-Document Upload</nb-card-header>
+    <form>
     <nb-card-body>
-      <input type="file" class="file-input" #fileUpload>
+      <input type="file" class="file-input" #fileUpload [formControl]="fileUp">
 
       <div class="file-upload">
         <div class="cUpload">
@@ -11,14 +12,16 @@
           </button>
         </div>
         <div class="cUpload">
-          {{fileUpload.files[0] == null ? "Please select a file to upload." : fileUpload.files[0].name}}
+          {{fileSplit(fileUp.value) == '' ? "Please select a file to upload." : fileSplit(fileUp.value)}}
         </div>
       </div>
-    </nb-card-body>
-    <nb-card-footer>
       <button (click)="onUpload(fileUpload)" nbButton status="primary" hero>
         UPLOAD
       </button>
-    </nb-card-footer>
+    </nb-card-body>
+  </form>
   </nb-card>
 </div>
+
+<label for="name">Name: </label>
+<input id="name" type="text" [formControl]="nameForm">

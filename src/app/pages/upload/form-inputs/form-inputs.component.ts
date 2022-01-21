@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { NbWindowService } from '@nebular/theme';
 import { take } from 'rxjs/operators';
 import { WindowFormComponent } from '../window/window-form/window-form.component';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'ngx-form-inputs',
@@ -10,6 +11,17 @@ import { WindowFormComponent } from '../window/window-form/window-form.component
   templateUrl: './form-inputs.component.html',
 })
 export class FormInputsComponent {
+
+  nameForm = new FormControl('');
+  fileUp = new FormControl('');
+
+  public fileSplit(fileUp) {
+    return fileUp.split(/(\\|\/)/g).pop();
+  }
+
+  fileUploadForm = new FormGroup({
+    fupName: new FormControl(''),
+  });
 
   fileName = '';
 
