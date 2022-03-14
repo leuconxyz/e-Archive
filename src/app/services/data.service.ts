@@ -16,4 +16,8 @@ export class DataService {
   public sendGetSearchRequest(eId) {
     return this.httpClient.get(this.REST_API_SERVER + '/files/search/?text=' + eId);
   }
+
+  public sendGetSearchLatest() {
+    return this.httpClient.get(this.REST_API_SERVER + '/files/searchLatest');
+  }
 }

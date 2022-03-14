@@ -1,4 +1,4 @@
-import {Component, OnDestroy} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import { NbSearchService, NbThemeService, NbDialogService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators' ;
 import { DataService } from '../../services/data.service';
@@ -15,7 +15,13 @@ interface CardSettings {
   styleUrls: ['./dashboard.component.scss'],
   templateUrl: './dashboard.component.html',
 })
-export class DashboardComponent implements OnDestroy {
+export class DashboardComponent implements OnDestroy, OnInit {
+
+  ngOnInit() {
+    this.dataService.sendGetSearchLatest().subscribe((result: any) => {
+      this.eList = result;
+    });
+  }
 
   private alive = true;
   readMore = false;
