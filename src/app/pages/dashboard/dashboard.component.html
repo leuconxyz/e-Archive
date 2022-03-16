@@ -5,17 +5,16 @@
     </nb-card-header>
 
     <nb-card-body>
-      <div class="row">
+      <div class="row" *ngIf="doc.highlight; else elseHigh">
         <p #xx data-read="false" *ngFor="let text of doc.highlight.text" [innerHTML]="text">
-
-          <!-- {{(xx.dataset.read=='true') ? doc._source.text : doc._source.text | slice:0:150}} <span *ngIf="xx.dataset.read=='false'">...</span>
-          <a href="javascript:;" *ngIf="xx.dataset.read=='false'" (click)="xx.dataset.read ='true'">[Read More]</a>
-          <a href="javascript:;" *ngIf="xx.dataset.read=='true'" (click)="xx.dataset.read ='false'">[Read Less]</a> -->
-
-          <!-- <p>Document Text:</p>
-        <p>{{doc.text}}</p> -->
         </p>
       </div>
+      <ng-template #elseHigh>
+      <div class="row">
+        <p #xx data-read="false"  [innerHTML]="doc._source.text">
+        </p>
+      </div>
+      </ng-template>
       <div class="row">
         <div class="col-lg-6">
           <button nbButton (click)="open(doc)">Read More</button>
